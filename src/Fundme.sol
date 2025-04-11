@@ -78,6 +78,18 @@ contract FundMe {
     receive() external payable {
         fund();
     }
+    function getAddressToAmountFunded(address funder) public view returns (uint256) {
+        return addressToAmountFunded[funder];
+    }
+
+    function getFunder(uint256 index) public view returns (address) {
+        return funders[index];
+    }
+
+    function getowner() public view returns (address) {
+        return i_owner;
+    }
+
 }
 
 // Concepts we didn't cover yet (will cover in later sections)
@@ -88,3 +100,4 @@ contract FundMe {
 // 5. abi.encode / decode
 // 6. Hash with keccak256
 // 7. Yul / Assembly
+
